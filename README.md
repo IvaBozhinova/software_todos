@@ -13,8 +13,9 @@ Steps to run project:
 5. Enjoy the software
 
 Future improvements:
-1. File for constants - best case would be a database table which to be used as managing constants by the client(admin)
-2. File for texts -> leads to fast management and quickly translatable to any other language
-3. Better UX for light/dark theme - currently only the background changes
-4. Remove redundant code -> leads to better code readability
-5. Optimizations always needed
+1. Possibility for drag and drop of todos
+2. File for constants - best case would be a database table which to be used as managing constants by the client(admin)
+3. File for texts -> leads to fast management and quickly translatable to any other language
+4. Better UX for light/dark theme - currently only the background changes
+5. Remove redundant code -> leads to better code readability
+6. Optimizations always needed
