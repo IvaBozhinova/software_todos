@@ -21,6 +21,8 @@ const CompletedTodos = ({
   return (
     <div className="completed-list">
       <h2>Completed Todos</h2>
+      <h3 className="todo-count">Count: {filteredTodos.length}</h3>
+
       <ul>
         {visibleTodos.sort((a, b) => {
           if (sortOrder === 'asc') {

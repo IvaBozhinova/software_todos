@@ -28,6 +28,8 @@ const UncompletedTodos = ({
   return (
     <div>
       <h2>Uncompleted Todos</h2>
+      <h3 className="todo-count">Count: {filteredTodos.length}</h3>
+
       <ul className="uncompleted-list">
         {visibleTodos.map(todo => (
           <li key={`u-${todo.id}`}
