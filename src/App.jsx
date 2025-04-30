@@ -115,7 +115,8 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${theme}`}>
+
       <button 
         onClick={toggleTheme} 
         className="theme-toggle" >
