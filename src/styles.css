@@ -116,10 +116,14 @@ h2  {
 .filters {
   display: flex;
   gap: 1rem;
-
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   font-weight: 600;
+}
+.filter-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 .filters select {
   padding: 0.75rem 1rem;
@@ -517,4 +521,60 @@ body.dark .filters select {
   background-color: #2b2b2b;
   color: #fff;
   border: 1px solid #555;
+}
+.search-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрира по хоризонтала */
+}
+/* Тъмна тема */
+body.dark .search-input {
+  background-color: #2b2b2b;
+  color: white;
+  border: 1px solid #555;
+}
+
+
+
+/* Търсачката да е подравнена в центъра */
+.search-container {
+  display: flex;
+  justify-content: center; /* Центрира търсачката */
+  margin-bottom: 0.5rem;
+  width: 50;
+}
+
+
+.search-input {
+  width: 80%; 
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #b5eadb;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f1fdfb, #d7fbe8);
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Ако искаш да подравниш филтъра с търсачката */
+.filter-wrapper {
+  display: flex;
+  justify-content: center; /* Центрира филтъра по хоризонтала */
+  width: 100%;
+  margin-top: 1rem;
 }

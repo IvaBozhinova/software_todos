@@ -17,6 +17,8 @@ const App = () => {
   const [completedSortOrder, setCompletedSortOrder] = useState('asc');
   const [uncompletedTodos, setUncompletedTodos] = useState([]);
   const [theme, setTheme] = useState('light');
+  const [searchQuery, setSearchQuery] = useState('');
+
 
   // Add new todo
   const addTodo = (newTodo) => {
@@ -122,6 +124,9 @@ const App = () => {
         className="theme-toggle" >
         {theme === 'light' ? '🌙 Тъмна тема' : '☀️ Светла тема'}
       </button>
+      <div className="search-container">
+ 
+</div>
 
       <div className="left-side">
         <div>
@@ -144,19 +149,32 @@ const App = () => {
           filterUser={filterUser}
           setFilterUser={setFilterUser}
           visibleCount={visibleUncompletedCount}
+          searchQuery={searchQuery}
           onLoadMore={handleLoadMoreUncompleted} />
       </div>
 
       <div className="right-side">
+      <div className="search-container">
+    <input
+      type="text"
+      placeholder="Search by title..."
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+      className="search-input"
+    />
+  </div>
+    <div className="filter-wrapper">
         <FilterSort2
           setSortOrder={setCompletedSortOrder} />
+          </div>
         <CompletedTodos
           sortOrder={completedSortOrder}
           completedTodos={completedTodos}
           onUncomplete={handleUncomplete}
           visibleCount={visibleCompletedCount}
           onLoadMore={handleLoadMoreCompleted}
-          filterUser={filterUser} />
+          filterUser={filterUser}
+          searchQuery={searchQuery} />
       </div>
     </div>
   );

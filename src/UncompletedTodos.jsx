@@ -6,9 +6,12 @@ const UncompletedTodos = ({
   filterUser,
   sortOrder,
   visibleCount,
+  searchQuery,
   onLoadMore
 }) => {
-  const filteredTodos = todos.filter(todo => !todo.completed && (filterUser ? todo.username === filterUser : true));
+  const filteredTodos = todos.filter(todo => !todo.completed && (filterUser ? todo.username === filterUser : true) &&
+  todo.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+);
 
   const sortedUncompletedTodos = [...filteredTodos].sort((a, b) => {
     //Priority is when new flag is set

@@ -7,10 +7,15 @@ const CompletedTodos = ({
   sortOrder,
   visibleCount,
   onLoadMore,
-  filterUser
+  filterUser,
+searchQuery
 }) => {
+  const filteredTodos = completedTodos.filter(todo =>
+    todo.completed &&
+    (filterUser ? todo.username === filterUser : true) &&
+    todo.title.toLowerCase().startsWith(searchQuery.toLowerCase())
 
-  const filteredTodos = completedTodos.filter(todo => todo.completed && (filterUser ? todo.username === filterUser : true));
+);
 
   const sortedCompletedTodos = filteredTodos.sort((a, b) => {
     return sortOrder === 'asc' ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
