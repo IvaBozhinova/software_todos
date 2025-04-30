@@ -6,10 +6,13 @@ const CompletedTodos = ({
   onUncomplete,
   sortOrder,
   visibleCount,
-  onLoadMore
+  onLoadMore,
+  filterUser
 }) => {
 
-  const sortedCompletedTodos = completedTodos.sort((a, b) => {
+  const filteredTodos = completedTodos.filter(todo => todo.completed && (filterUser ? todo.username === filterUser : true));
+
+  const sortedCompletedTodos = filteredTodos.sort((a, b) => {
     return sortOrder === 'asc' ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
   });
 

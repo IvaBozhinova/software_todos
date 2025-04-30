@@ -26,7 +26,7 @@ const App = () => {
       completed: false,
     };
 
-    setTodos((prevTodos) => [...prevTodos, newTodo]);
+   // setTodos((prevTodos) => [...prevTodos, newTodo]);
     setUncompletedTodos((prevUncompleted) => [newTodo, ...prevUncompleted]);
   };
 
@@ -124,7 +124,8 @@ const App = () => {
 
       <div className="left-side">
         <div>
-          <TodoForm onSubmit={addTodo} users={users} />
+          <TodoForm onSubmit={addTodo}
+           users={users} />
         </div>
 
         <FilterSort
